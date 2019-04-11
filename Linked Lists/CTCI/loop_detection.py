@@ -29,3 +29,21 @@ def loop_detection(head):
         runner = runner.next
 
     return curr
+
+
+# Only checks if there's a loop
+def has_cycle(head):
+    """
+    :type head: ListNode
+    :rtype: bool
+    """
+    curr = head
+    runner = head
+
+    while runner is not None and runner.next is not None:
+        curr = curr.next
+        runner = runner.next.next
+        if curr == runner:
+            return True
+
+    return False

@@ -19,17 +19,16 @@ def intersection(head1, head2):
     diff = abs(len_h1-len_h2)
     # Current node in longer list is then moved diff positions forward
     if len_h1 > len_h2:
-        curr1 = head1
         for i in range(diff):
             curr1 = curr1.next
     else:
-        curr2 = head2
         for i in range(diff):
             curr2 = curr2.next
     # Compare the nodes in both linked lists until intersection found
     while curr1 and curr2:
         if curr1 == curr2:
             return curr1
-        else:
-            curr1 = curr1.next
-            curr2 = curr2.next
+        curr1 = curr1.next
+        curr2 = curr2.next
+
+    return -1

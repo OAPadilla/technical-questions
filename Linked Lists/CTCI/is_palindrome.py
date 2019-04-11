@@ -12,13 +12,13 @@ def is_palindrome(head):
 
     curr = head
     reversed = ListNode()
-    rev_head = reversed
+    rhead = reversed
 
     # create reversed LL
     while curr is not None:
-        tmp = ListNode(curr.data)
-        tmp.next = rev_head.next
-        rev_head.next = tmp
+        tmp = curr
+        tmp.next = rhead.next   # Connects tmp to rhead ll
+        rhead.next = tmp        # Update rhead.next to latest in the original ll thats been reversed
         curr = curr.next
 
     # compare both LLs

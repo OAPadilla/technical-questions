@@ -49,11 +49,15 @@ class LinkedList:
         if carry > 0:
             temp.next = Node(carry)
 
-    def print_list(selfself):
+    def print_list(self):
         temp = self.head
         while (temp):
             print(temp.data)
             temp = temp.next
 
-
-
+def add_two_numbers(l1, l2):
+    """
+    :type l1: ListNode
+    :type l2: ListNode
+    :rtype: ListNode
+    """
